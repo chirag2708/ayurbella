@@ -15,5 +15,5 @@ class Patient(models.Model):
     Country=models.CharField(max_length=50)
 
 
-    def _str_(self):
-       return  "%s" %(self.firstName)
+    def __str__(self):
+       return  self.firstName

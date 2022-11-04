@@ -14,11 +14,12 @@ from .views.aboutus import aboutus
 from .views.panchkarma import panchkarma
 from .views.skinandhair import skinandhair
 from .views.payment import payment
+from .views.homepage import homepage
 from .middlewares.auth import  auth_middleware
 
 
 urlpatterns = [
-    path('', Index.as_view(), name='homepage'),
+    path('', Index.as_view(), name='homepage1'),
     path('store', store , name='store'),
 
     path('signup', Signup, name='signup'),
@@ -32,6 +33,7 @@ urlpatterns = [
     path('panchkarma', panchkarma ,name='panchkarma'),
     path('skinandhair', skinandhair ,name='skinandhair'),
     path('payment', payment ,name='payment'),
+    path('homepage', homepage ,name='homepage'),
     path('Otp', Otp.as_view() , name='Otp'),
 
 ]
