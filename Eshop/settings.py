@@ -122,3 +122,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = "/image/download/"
 MEDIA_ROOT = BASE_DIR
+
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER="chirag.tester2002@gmail.com"
+EMAIL_HOST_PASSWORD="syygmvtfjpcrcpgh"
+EMAIL_USE_TLS=True
+

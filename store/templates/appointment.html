@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+
+<div class="container mt-4">
+
+    <div class="p-3 m-3">
+
+
+        <div class="col-lg-6 rounded mx-auto border pt-2">
+            <div class="text-center col">
+
+                <h2 class="alert alert-success rounded-pill" style="text-align:center">Appointment Registration Form</h2>
+
+                <hr>
+            </div>
+
+            
+            <strong style="color:green;font-size: large;"> {{ msg }}</strong>
+            <br/>
+            <br/>
+
+            
+            <form action="/appointment" method="post">
+
+                {% csrf_token %}
+
+               
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input id="first_name" type="text" placeholder="Name Of the patient" name="first_name"
+                        value="{{first_name}}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Email">Gender</label>
+                    <select name="gender" class="form-control" style="height:33px">
+                        
+                        <option value=""></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input id="Age" type="number" placeholder="" name="Age" value="{{Age}}" class="form-control"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="Name2">Name of the person taking appointment</label>
+            <input id="Name_Of_the_Person_taking_Appointment" type="text" placeholder=""
+                name="Name_Of_the_Person_taking_Appointment" value="{{Name_Of_the_Person_taking_Appointment}}"
+                class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="relation">Relationship with the patient</label>
+            <input id="Relationship_with_patient" type="text" name="Relationship_with_patient" placeholder=""
+                value="{{Relationship_with_patient}}" class="form-control" required>
+        </div>
+
+        <label for="doctor">Select Your Doctor</label>
+        <div>
+            <select name="Dr" class="form-control" style="height:33px">
+                <option value=""></option>
+                <option value="Dr. Madhu Chawla">Dr. Madhu Chawla</option>
+                <option value="Dr. Rachit Vikas Mhatre">Dr. Rachit Vikas Mhatre</option>
+            </select>
+
+        </div>
+
+        <br>
+
+        <div>
+            <label for="PDA">Preffered Slot of Appointment</label>
+            <div>
+                <input type="datetime-local" id="PDA" name="PDA" placeholder="dd-mm-yy" value="{{PDA}}"
+                    class="form-control" required>
+
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input id="Email" type="text" value="{{Email}}" name="Email" placeholder="abc@gmail.com"
+                    class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Phone">Contact</label>
+                <input type="tel" id="phone" name="phone" name="phone" placeholder="0123-45-6789"
+                    pattern="[0-9]{10}" value="{{phone}}" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Country">Country</label>
+                <input id="Country" type="text" value="{{Country}}" name="Country" placeholder="India"
+                    class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+            <br/>
+            <br/>
+            
+            </form>
+            <div class="panel-footer text-right">
+                <small>&copy; Ayurbella Clinic</small>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

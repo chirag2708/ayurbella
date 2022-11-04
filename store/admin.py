@@ -3,6 +3,9 @@ from .models.product import Products
 from .models.category import Category
 from .models.customer import Customer
 from .models.orders import Order
+from .models.patient import Patient
+
+
 
 
 class AdminProduct(admin.ModelAdmin):
@@ -17,6 +20,7 @@ admin.site.register(Products,AdminProduct)
 admin.site.register(Category)
 admin.site.register(Customer)
 admin.site.register(Order)
+admin.site.register(Patient)
 
 
-# username = Tanushree, email = tanushree7252@gmail.com, password = 1234
+

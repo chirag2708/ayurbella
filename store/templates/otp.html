@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+    <div class="card py-5 px-3">
+        <h5 class="m-0">E-mail verification</h5>
+        <span class="mobile-text">Enter the Otp we just send on your
+            Mail </span>
+        <div class="d-flex flex-row mt-5">
+            <form method="POST" action="/signup">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control m-2 text-center form-control rounded" name="o1"
+                            autofocus="" maxlength="1">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control m-2 text-center form-control rounded" name="o2"
+                            maxlength="1">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control m-2 text-center form-control rounded" name="o3"
+                            maxlength="1">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control m-2 text-center form-control rounded" name="o4"
+                            maxlength="1">
+                    </div>
+
+
+                </div>
+                <br />
+                <br />
+
+
+                <input type="submit" class="btn btn-primary">
+                <br />
+                <br />
+                
+
+
+            </form>
+
+            
+        </div>
+        <center>
+        {{ msg }}
+    </center>
+        <br />
+                <br />
+                <br />
+
+        {% endblock %}
